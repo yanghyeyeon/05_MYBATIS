@@ -12,6 +12,7 @@ public class MenuController {
     *
     * Service 를 알고 있어야 한다.
     * */
+
     private final MenuService menuService;
     private final PrintResult printResult;
 
@@ -22,6 +23,14 @@ public class MenuController {
     }
 
     public void selectAllMenu() {
+
         List<MenuDTO> menuList = menuService.selectAllMenu();
+
+        // view로 전달
+        if(menuList != null) {
+            printResult.printMenuList(menuList);
+        } else {
+            printResult.printErrorMessage("selectList");
+        }
     }
 }

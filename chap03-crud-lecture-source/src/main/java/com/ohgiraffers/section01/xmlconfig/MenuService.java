@@ -4,6 +4,8 @@ import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
 
+import static com.ohgiraffers.section01.xmlconfig.Template.getSqlSession;
+
 public class MenuService {
 
     /*
@@ -30,6 +32,13 @@ public class MenuService {
 
         // 세션 열어주기
         SqlSession sqlSession = getSqlSession();
-        return null;
+
+        // MenuDAO를 이용해 데이터베이스에서 menuList
+        List<MenuDTO> menuList = menuDAO.selectAllMenu(sqlSession);
+
+        // 세션 닫아주기
+        sqlSession.close();
+
+        return menuList;
     }
 }
