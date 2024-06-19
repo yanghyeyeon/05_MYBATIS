@@ -1,6 +1,7 @@
 package com.ohgiraffers.section01.xmlconfig;
 
 import java.util.List;
+import java.util.Map;
 
 public class MenuController {
 
@@ -31,6 +32,21 @@ public class MenuController {
             printResult.printMenuList(menuList);
         } else {
             printResult.printErrorMessage("selectList");
+        }
+    }
+
+    public void selectMenuByCode(Map<String, String> parameter) {
+
+        int code = Integer.parseInt(parameter.get("code"));
+
+        // service로 보내기
+        MenuDTO menu = menuService.selectMenuByCode(code);
+
+        // view로 전달
+        if (menu != null) {
+            printResult.printMenu(menu);
+        } else {
+            printResult.printErrorMessage("selectOne");
         }
     }
 }
