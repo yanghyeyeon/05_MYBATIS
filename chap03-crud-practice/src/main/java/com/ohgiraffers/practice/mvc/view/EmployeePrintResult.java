@@ -4,7 +4,7 @@ import com.ohgiraffers.practice.mvc.dto.EmployeeDTO;
 
 import java.util.List;
 
-public class PrintResult {
+public class EmployeePrintResult {
     public void printEmployeeList(List<EmployeeDTO> empList) {
 
         for(EmployeeDTO emp : empList) {

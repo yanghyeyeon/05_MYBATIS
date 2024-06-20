@@ -3,20 +3,20 @@ package com.ohgiraffers.practice.mvc.controller;
 
 import com.ohgiraffers.practice.mvc.dto.EmployeeDTO;
 import com.ohgiraffers.practice.mvc.service.EmployeeService;
-import com.ohgiraffers.practice.mvc.view.PrintResult;
+import com.ohgiraffers.practice.mvc.view.EmployeePrintResult;
 
 import java.util.List;
 import java.util.Map;
 
 public class EmployeeController {
 
-    private final PrintResult printResult;
+    private final EmployeePrintResult printResult;
     private final EmployeeService employeeService;
 
     public EmployeeController() {
 
         // 생성자 주입
-        printResult = new PrintResult();
+        printResult = new EmployeePrintResult();
         employeeService = new EmployeeService();
     }
 
