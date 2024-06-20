@@ -1,6 +1,7 @@
 package com.ohgiraffers.practice.mvc.common;
 
 import com.ohgiraffers.practice.mvc.dao.EmployeeMapper;
+import com.ohgiraffers.practice.mvc.dao.JobMapper;
 import org.apache.ibatis.datasource.pooled.PooledDataSource;
 import org.apache.ibatis.mapping.Environment;
 import org.apache.ibatis.session.Configuration;
@@ -30,6 +31,7 @@ public class Template {
             Configuration configuration = new Configuration(environment);
 
             configuration.addMapper(EmployeeMapper.class);
+            configuration.addMapper(JobMapper.class);
 
             sqlSessionFactory = new SqlSessionFactoryBuilder().build(configuration);
 
