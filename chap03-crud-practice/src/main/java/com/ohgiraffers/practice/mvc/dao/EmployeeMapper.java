@@ -1,4 +1,6 @@
-package com.ohgiraffers.practice.remix;
+package com.ohgiraffers.practice.mvc.dao;
+
+import com.ohgiraffers.practice.mvc.dto.EmployeeDTO;
 
 import java.util.List;
 
@@ -15,4 +17,5 @@ public interface EmployeeMapper {
     int modifyEmployee(EmployeeDTO emp);
 
     int deleteEmployee(String empId);
+
 }

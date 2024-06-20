@@ -1,5 +1,7 @@
-package com.ohgiraffers.practice.remix;
+package com.ohgiraffers.practice.mvc;
 
+
+import com.ohgiraffers.practice.remix.EmployeeController;
 
 import java.util.HashMap;
 import java.util.Map;

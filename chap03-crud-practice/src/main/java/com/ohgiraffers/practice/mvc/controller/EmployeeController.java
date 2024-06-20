@@ -1,5 +1,9 @@
-package com.ohgiraffers.practice.remix;
+package com.ohgiraffers.practice.mvc.controller;
 
+
+import com.ohgiraffers.practice.mvc.dto.EmployeeDTO;
+import com.ohgiraffers.practice.mvc.service.EmployeeService;
+import com.ohgiraffers.practice.mvc.view.PrintResult;
 
 import java.util.List;
 import java.util.Map;
@@ -55,8 +59,8 @@ public class EmployeeController {
             printResult.printErrorMessage("selectOne");
         }
     }
-    // 신규 메뉴 등록
 
+    // 신규 메뉴 등록
     public void registEmployee(Map<String, String> parameter) {
 
         String empId = parameter.get("empId");
@@ -83,8 +87,8 @@ public class EmployeeController {
             printResult.printErrorMessage("insert");
         }
     }
-    // 메뉴 수정
 
+    // 메뉴 수정
     public void modifyEmployee(Map<String, String> parameter) {
 
         String empId = parameter.get("empId");
@@ -111,8 +115,8 @@ public class EmployeeController {
             printResult.printErrorMessage("update");
         }
     }
-    // 메뉴 삭제
 
+    // 메뉴 삭제
     public void deleteEmployee(Map<String, String> parameter) {
 
         String empId = parameter.get("empId");

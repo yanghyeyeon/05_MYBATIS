@@ -1,10 +1,13 @@
-package com.ohgiraffers.practice.remix;
+package com.ohgiraffers.practice.mvc.service;
 
+import com.ohgiraffers.practice.mvc.dto.EmployeeDTO;
+import com.ohgiraffers.practice.mvc.dao.EmployeeMapper;
+import com.ohgiraffers.practice.remix.Template;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
 
-import static com.ohgiraffers.practice.remix.Template.getSqlSession;
+import static com.ohgiraffers.practice.mvc.common.Template.getSqlSession;
 
 
 public class EmployeeService {
@@ -39,7 +42,7 @@ public class EmployeeService {
 
     public EmployeeDTO selectEmployeeByName(String empName) {
 
-        SqlSession sqlSession = getSqlSession();
+        SqlSession sqlSession = Template.getSqlSession();
 
         EmployeeMapper = sqlSession.getMapper(EmployeeMapper.class);
 
