@@ -20,7 +20,7 @@ public class Application {
             int no = sc.nextInt();
 
             switch (no) {
-                case 1: break;
+                case 1: elementTestService.selectCacheTest(); break;
                 case 2: break;
                 case 3: break;
                 case 4: break;
