@@ -12,5 +12,5 @@ public class CategoryDTO {
 
     private int code;
     private String name;
-    private Integer refCategoryCode;
+    private int refCategoryCode;
 }
