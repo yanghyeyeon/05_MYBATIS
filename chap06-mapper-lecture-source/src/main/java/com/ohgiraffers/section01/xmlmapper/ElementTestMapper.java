@@ -1,5 +1,6 @@
 package com.ohgiraffers.section01.xmlmapper;
 
+import com.ohgiraffers.common.CategoryAndMenuDTO;
 import com.ohgiraffers.common.MenuAndCategoryDTO;
 import com.ohgiraffers.common.MenuDTO;
 
@@ -14,4 +15,6 @@ public interface ElementTestMapper {
     List<MenuDTO> selectResultMapConstructorTest();
 
     List<MenuAndCategoryDTO> selectResultMapAssociationTest();
+
+    List<CategoryAndMenuDTO> selectResultMapCollectionTest();
 }
