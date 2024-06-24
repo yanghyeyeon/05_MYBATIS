@@ -37,7 +37,7 @@
         <id property="deptId" column="dept_id"/>
         <result property="deptTitle" column="dept_title"/>
         <result property="locationId" column="location_id"/>
-        <collection property="deptList" ofType="com.ohgiraffers.common.EmployeeDTO">
+        <collection property="empList" ofType="com.ohgiraffers.common.EmployeeDTO">
             <id property="empId" column="emp_id"/>
             <result property="empName" column="emp_name"/>
             <result property="empNo" column="emp_no"/>
@@ -58,7 +58,7 @@
         select
         *
         from department a
-        join employee b on (b.dept_code = a.dept_id)
+        right join employee b on (b.dept_code = a.dept_id)
         order by a.dept_id
     </select>
 

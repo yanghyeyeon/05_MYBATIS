@@ -2,6 +2,7 @@ package com.ohgiraffers.practice.emp;
 
 import com.ohgiraffers.common.DeptAndEmployeeDTO;
 import com.ohgiraffers.common.EmployeeAndDeptDTO;
+import com.ohgiraffers.common.EmployeeDTO;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
@@ -19,10 +20,10 @@ public class ElementTestService {
 
         mapper = sqlSession.getMapper(ElementTestMapper.class);
 
-        List<EmployeeAndDeptDTO> menuList = mapper.selectResultMapAssociationTest();
+        List<EmployeeAndDeptDTO> empList = mapper.selectResultMapAssociationTest();
 
-        for(EmployeeAndDeptDTO menu : menuList) {
-            System.out.println("사원이름 : " + menu.getEmpName() + "부서명 : " + menu.getDept().getDeptTitle());
+        for(EmployeeAndDeptDTO emp : empList) {
+            System.out.println("사원이름 : " + emp.getEmpName() + ", 부서명 : " + emp.getDept().getDeptTitle());
         }
 
         sqlSession.close();
@@ -34,10 +35,17 @@ public class ElementTestService {
 
         mapper = sqlSession.getMapper(ElementTestMapper.class);
 
-        List<DeptAndEmployeeDTO> categoryList = mapper.selectResultMapCollectionTest();
+        List<DeptAndEmployeeDTO> deptList = mapper.selectResultMapCollectionTest();
 
-        for(DeptAndEmployeeDTO dept : categoryList) {
-            System.out.println(dept);
+        for(DeptAndEmployeeDTO dept : deptList) {
+
+            System.out.println("-------------------------");
+            System.out.println(dept.getDeptId());
+
+            for(EmployeeDTO emp : dept.getEmpList()){
+
+                System.out.println(emp.getEmpName());
+            }
         }
 
         sqlSession.close();

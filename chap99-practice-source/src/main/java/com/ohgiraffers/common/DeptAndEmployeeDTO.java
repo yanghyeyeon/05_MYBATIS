@@ -16,5 +16,5 @@ public class DeptAndEmployeeDTO {
     private String deptTitle;
     private String locationId;
 
-    private List<EmployeeDTO> deptList;
+    private List<EmployeeDTO> empList;
 }
