@@ -71,7 +71,7 @@ public class Application {
 
             switch (no) {
                 case 1: elementTestService.insertMenuTest(inputMenu()); break;
-                case 2: elementTestService.insertMenuAndCategory(inputMenuAndCategory()); break;
+                case 2: elementTestService.insertCategoryAndMenuTest(inputMenuAndCategory()); break;
 
             }
         } while (true);
